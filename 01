@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello</title>
+    <script type="text/javascript" src="jQuery/jquery-3.4.1.min.js"></script>
+    <style type="text/css">
+        html,body{
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+        .top{
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: #555555;
+            height: 100px;
+            width: 100%;
+            z-index: 100;
+        }
+        .bottom{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background: #555555;
+            height: 100px;
+            width: 100%;
+            z-index: 100;
+        }
+        .middle{
+            position: absolute;
+            width: 100%;
+            overflow: auto;
+            background-color: darkgoldenrod;
+            bottom: 100px;
+            top: 100px;
+            _height:100%;
+            z-index: 90;
+        }
+        .bottom h2{
+            text-align: center;
+            color: white;
+            font-size: 10px;
+
+            transform: translateY(200%);
+        }
+
+        #line{
+            height: 15px;
+            width: 200px;
+            left: 30%;
+
+            position: absolute;
+            bottom: 120px;
+            background-color: white;
+        }
+
+        .one{
+            font-family: "Bodoni MT";
+            font-style: italic;/*斜体*/
+            font-size: 50px;
+            color: white;
+            position: absolute;
+            /*border: blueviolet solid 2px;*/
+            left: 120px;
+            top: 120px;
+        }
+        .login{
+            position: absolute;
+            height: 450px;
+            width: 350px;
+            right: 20%;
+            top: 10%;
+
+            background-color: #555555;
+            border-radius: 10%;
+            background: rgba(0, 20, 100, 0.2);
+            box-shadow: 0 15px 25px rgba(0,0,0,.5);
+            box-sizing: border-box;
+
+        }
+        .login h2{
+            border: 10px;
+            padding: 0;
+            color: aliceblue;
+            text-align: center;
+            font-family: "Adobe 黑体 Std R";
+            font-size:40px;
+
+        }
+        .login .inputBox{
+            position: relative;
+            /*border: 2px solid skyblue;*/
+            padding: 20px;
+            margin-top: 5px;
+        }
+        .login .inputBox input{
+            width: 100%;
+            padding: 10px 0;
+            font-size: 16px;
+            color: #fff;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+            border: none;
+            border-bottom: 1px solid #fff;
+            outline: none;
+            background: transparent;
+        }
+        .login .inputBox label{
+            position: absolute;
+            /*border: #03a9f4 solid 2px;*/
+            margin-left: 13px;
+            top: 0;
+            left: 5px;
+            letter-spacing: 1px;
+            padding: 15px 0;
+            font-size: 15px;
+            color: #fff;
+            pointer-events: none;
+            transition: .5s;
+        }
+        .login .inputBox input:focus ~ label,
+        .login .inputBox input:valid ~ label
+        {
+            top: -15px;
+            left:2px;
+            color: #03a9f4;
+            font-size: 12px;
+
+        }
+
+        .login input[type='submit']{
+            background: transparent;
+            border:none;
+            outline: none;
+            color: #fff;
+            background: #03a9f4;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-left: 10px;
+            border-radius: 5px;
+            width: 120px;
+
+
+        }
+        .login button{
+            background: transparent;
+            border:none;
+            outline: none;
+            color: #fff;
+            background: #03a9f4;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-left: 30px;
+            border-radius: 5px;
+            font-size: 13px;
+            text-decoration: none;
+        }
+        .RemBer{
+            /*border: blueviolet solid 2px;*/
+            text-align: center;
+            color: white;
+            padding-bottom: 10px;
+        }
+
+        .lastButton{
+            text-align: center;
+            /*border: green solid 2px;*/
+            padding-top: 15px;
+        }
+
+
+
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="top"></div>
+    <div class="middle">
+        <div class="one">没有什么能打倒你啊</div>
+
+        <div class="login">
+            <h2>发现新世界</h2>
+            <form method="post">
+                <div class="inputBox">
+                    <input type="text" name="" required="">
+                    <label>你的名字</label>
+                </div>
+                <div class="inputBox">
+                    <input type="password" name="" required="">
+                    <label>密码</label>
+                </div>
+                <div class="RemBer">
+                    <input type="checkbox">
+                    <label>记住我呀</label>
+                </div>
+                <div class="lastButton">
+                    <input type="submit" name="" value="确认">
+                    <a href="#"><button>注册成为新朋友</button></a>
+                </div>
+
+
+
+            </form>
+
+        </div>
+
+
+        <div id="line"></div>
+
+    </div>
+
+
+    <div class="bottom">
+        <h2 class="last">AbuoBing COPYRIGHT</h2>
+    </div>
+
+</div>
+
+
+<script>
+    var Line=document.getElementById('line');
+    var j=0;
+    var set=setInterval(function () {
+        j++;
+        Line.style.width=j+'px';
+        if (j==400){
+            clearInterval(set);
+
+        }
+
+    },30);
+
+
+
+
+
+
+    $('#line').click(function () {
+        alert("这里只是一个小白条哦");
+
+    })
+
+
+
+
+</script>
+
+</body>
+</html>
